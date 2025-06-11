@@ -14,10 +14,10 @@ buttons.forEach(button => button.addEventListener('click', () => {
 	//Chain calculation
     else if ((button.textContent=='+'||button.textContent=='-'||button.textContent=='*'||button.textContent=='/') && displayValue !== "" && firstString !== "") {
     if (firstString.includes('+')) {smallDisplay.textContent = (Number(firstString.slice(0, -1)) + Number(display.textContent) + buttonValue); display.textContent = ""}
-    if (firstString.includes('-')) {smallDisplay.textContent = (Number(firstString.slice(0, -1)) - Number(display.textContent) + buttonValue); display.textContent = ""}
+    if (firstString.endsWith('-')) {smallDisplay.textContent = (Number(firstString.slice(0, -1)) - Number(display.textContent) + buttonValue); display.textContent = ""}
     if (firstString.includes('*')) {smallDisplay.textContent = (Number(firstString.slice(0, -1)) * Number(display.textContent) + buttonValue); display.textContent = ""}
     if (firstString.includes('/')) {smallDisplay.textContent = (Number(firstString.slice(0, -1)) / Number(display.textContent) + buttonValue); display.textContent = ""}
-    if (firstString.includes('/') && displayValue == '0') {display.textContent = 'Cant divide by zero'; smallDisplay.textContent = ''} 
+    if (firstString.includes('/') && displayValue == '0' || displayValue == "") {display.textContent = 'Cant divide by zero'; smallDisplay.textContent = ''} 
     }
     else if (button.textContent=='+'||button.textContent=='-'||button.textContent=='*'||button.textContent=='/') {
     	if (display.textContent === "") {smallDisplay.textContent = firstString.slice(0, -1) + button.textContent}
@@ -29,10 +29,10 @@ buttons.forEach(button => button.addEventListener('click', () => {
 		else if (button.textContent=='.') {if (!displayValue.includes('.')){display.textContent = display.textContent + button.textContent}}
 		else if (button.textContent=='=') {
     if (firstString.includes('+')) {display.textContent = (Number(firstString.slice(0, -1)) + Number(display.textContent) ); smallDisplay.textContent = ""}
-    if (firstString.includes('-')) {display.textContent = (Number(firstString.slice(0, -1)) - Number(display.textContent) ); smallDisplay.textContent = ""}
+    if (firstString.endsWith('-')) {display.textContent = (Number(firstString.slice(0, -1)) - Number(display.textContent) ); smallDisplay.textContent = ""}
     if (firstString.includes('*')) {display.textContent = (Number(firstString.slice(0, -1)) * Number(display.textContent) ); smallDisplay.textContent = ""}
     if (firstString.includes('/')) {display.textContent = (Number(firstString.slice(0, -1)) / Number(display.textContent) ); smallDisplay.textContent = ""}
-    if (firstString.includes('/') && displayValue == '0') {display.textContent = 'Cant divide by zero'; smallDisplay.textContent = ''} 
+    if (firstString.includes('/') && displayValue == '0' || displayValue == "") {display.textContent = 'Cant divide by zero'; smallDisplay.textContent = ''} 
     }
 }))
 }
