@@ -6,4 +6,4 @@ It violates basically every modern best practice"
 Jag har aldrig varit mer stolt.
 
 Ville testa göra en utan att "fuska".
-kalkylator v2 med bättre metoder kommer.
+Kalkylator v2 med bättre metoder kommer.
